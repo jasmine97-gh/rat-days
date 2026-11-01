@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>=====title===== | rat days</title>
-<meta name="description" content="=====description=====">
+<title>記事一覧 | rat days</title>
+<meta name="description" content="rat daysは、ファンシーラットの飼育方法や健康管理、食事、日々の暮らしに役立つ情報を紹介するサイトです。ファンシーラットの飼育情報を中心に、サイト制作に関する記録も掲載しています。">
 
 <link rel="icon" href="/rat-days/img/favicon.ico">
 
@@ -21,11 +21,57 @@
 <div id="header"></div>
 
 <nav aria-label="パンくずリスト" class="breadcrumb">
-  <ol class="breadcrumb__list">
-    <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
-    <li class="breadcrumb__item" aria-current="page">お知らせ</li>
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="/rat-days/">ホーム</a></li>
+    <li class="breadcrumb-item" aria-current="page">記事一覧</li>
   </ol>
 </nav>
+
+<main>
+  <section class="article-list">
+    <header class="article-list__header">
+      <h1 class="title">記事一覧</h1>
+    </header>
+    <div class="article-list__body">
+      <article class="article-card">
+        <a href="/rat-days/news/261030.html">
+          <div class="article-card__block">
+            <div class="article-card__text">
+              <div class="category">
+                <ul class="category-list">
+                  <li class="category-item devlog">制作日誌</li>
+                </ul>
+              </div>
+              <h2 class="title">767pxで<wbr />レイアウトが<wbr />崩れる問題を<wbr />解決する</h2>
+              <p class="subtitle">メディアクエリの見直しと、<wbr />新しいCSS構文の採用判断</p>
+            </div>
+            <div class="article-card__img">
+              <img src="/rat-days/news/img/261030_thumbnail.jpg" alt="比較演算子を使ったCSS" width="1200" height="630">
+            </div>
+          </div>
+        </a>
+      </article>
+      <article class="article-card">
+        <a href="/rat-days/news/261025.html">
+          <div class="article-card__block">
+            <div class="article-card__text">
+              <div class="category">
+                <ul class="category-list">
+                  <li class="category-item info">お知らせ</li>
+                </ul>
+              </div>
+              <h2 class="title">「rat days」を<wbr />開設しました</h2>
+              <p class="subtitle">rat daysでは、<wbr />ファンシーラットの<wbr />飼育に役立つ情報を<wbr />発信します</p>
+            </div>
+            <div class="article-card__img">
+              <img src="/rat-days/news/img/261025_thumbnail.jpg" alt="rat daysのロゴ" width="1200" height="630">
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
+</main>
 
 <div id="footer"></div>
 

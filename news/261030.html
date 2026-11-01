@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>767pxでレイアウトが崩れる問題を解決する | rat days</title>
-<meta name="description" content="ブラウザの表示幅が767pxのときにレイアウトが崩れる問題について、原因を調べた過程と解決方法を紹介します。メディアクエリの基本から、比較演算子を使ったCSS Media Queries Range Syntaxの書き方、採用時に確認したブラウザの対応状況まで解説します。">
+<meta name="description" content="ブラウザの表示幅が767pxのときにレイアウトが崩れる問題について、原因と解決方法を紹介します。メディアクエリの基本から、比較演算子を使ったCSS Media Queries Range Syntaxの書き方、ブラウザの対応状況まで解説します。">
 
 <link rel="icon" href="/rat-days/img/favicon.ico">
 
@@ -21,45 +21,41 @@
 <div id="header"></div>
 
 <nav class="breadcrumb" aria-label="パンくずリスト">
-  <ol class="breadcrumb__list">
-    <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
-    <li class="breadcrumb__item"><a href="/rat-days/news/">記事一覧</a></li>
-    <li class="breadcrumb__item" aria-current="page">767pxでレイアウトが崩れる問題を解決する</li>
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="/rat-days/">ホーム</a></li>
+    <li class="breadcrumb-item"><a href="/rat-days/news/">記事一覧</a></li>
+    <li class="breadcrumb-item" aria-current="page">767pxでレイアウトが崩れる問題を解決する</li>
   </ol>
 </nav>
 
 <main>
   <article class="article">
-    <div class="article__head">
+    <header class="article__header">
       <div class="category">
-        <ul class="category__list">
-          <li class="category__item c-green">制作日誌</li>
+        <ul class="category-list">
+          <li class="category-item devlog">制作日誌</li>
         </ul>
       </div>
-      <div class="title">
-        <h1>767pxで<wbr />レイアウトが<wbr />崩れる問題を<wbr />解決する</h1>
-      </div>
-      <div class="subtitle">
-        <p>メディアクエリの見直しと、<wbr />新しいCSS構文の採用判断</p>
-      </div>
+      <h1 class="title">767pxで<wbr />レイアウトが<wbr />崩れる問題を<wbr />解決する</h1>
+      <p class="subtitle">メディアクエリの見直しと、<wbr />新しいCSS構文の採用判断</p>
       <div class="date">
-        <ul class="date__list">
-          <li class="date__item"><time datetime="2026-10-30">2026/10/30</time> 公開</li>
-          <li class="date__item hidden"><time datetime="2026-10-30">2026/10/30</time> 更新</li>
+        <ul class="date-list">
+          <li class="date-item"><time datetime="2026-10-30">2026/10/30</time> 公開</li>
+          <li class="date-item hidden"><time datetime="2026-10-30">2026/10/30</time> 更新</li>
         </ul>
       </div>
-    </div>
+    </header>
 
     <nav class="article__index" aria-label="目次">
       <div class="index">
         <h2 class="index__h2-title">目次</h2>
-        <ol class="index__list">
-          <li class="index__item"><a href="#anchor01">メディアクエリとは</a></li>
-          <li class="index__item"><a href="#anchor02">767pxで発生した<wbr />表示崩れ</a></li>
-          <li class="index__item"><a href="#anchor03">調査で見つけた<wbr />原因と解決方法</a></li>
-          <li class="index__item"><a href="#anchor04">比較演算子を使った<wbr />メディアクエリ</a></li>
-          <li class="index__item"><a href="#anchor05">ブラウザの<wbr />利用シェアから<wbr />採用を判断する</a></li>
-          <li class="index__item"><a href="#anchor06">まとめ</a></li>
+        <ol class="index-list">
+          <li class="index-item"><a href="#anchor01">メディアクエリとは</a></li>
+          <li class="index-item"><a href="#anchor02">767pxで発生した<wbr />表示崩れ</a></li>
+          <li class="index-item"><a href="#anchor03">調査で見つけた<wbr />原因と解決方法</a></li>
+          <li class="index-item"><a href="#anchor04">比較演算子を使った<wbr />メディアクエリ</a></li>
+          <li class="index-item"><a href="#anchor05">ブラウザの<wbr />利用シェアから<wbr />採用を判断する</a></li>
+          <li class="index-item"><a href="#anchor06">まとめ</a></li>
         </ol>
       </div>
     </nav>
@@ -78,14 +74,17 @@
             <p>レスポンシブ対応では、画面の幅などの条件に応じてCSSのスタイルを切り替えるために、メディアクエリを使用します。例えば、次のように記述することで、画面幅が768px以上の場合と767px以下の場合で異なるスタイルを適用できます。</p>
           </div>
           <div class="contents__code">
-            <div class="contents__code__header">
-              <div class="contents__code__language">
-                <span class="language-css">CSS</span>
-              </div>
-              <button class="contents__code__copy" type="button">コピー</button>
-            </div>
-            <div class="contents__code__block language-css">
-              <pre><code>/* デスクトップ向け */
+            <div class="code">
+              <header class="code__header">
+                <div class="code__language">
+                  <ul class="code__language-list">
+                    <li class="code__language-item language-css">CSS</li>
+                  </ul>
+                </div>
+                <button class="code__copy" type="button">コピー</button>
+              </header>
+              <div class="code__body">
+                <pre><code class="language-css">/* デスクトップ向け */
 @media (min-width: 768px) {
   /* 画面幅が768px以上のスタイル */
 }
@@ -94,6 +93,7 @@
 @media (max-width: 767px) {
   /* 画面幅が767px以下のスタイル */
 }</code></pre>
+              </div>
             </div>
           </div>
         </section>
@@ -133,14 +133,17 @@
             <p>例えば、比較演算子を使うと、次のように記述できます。</p>
           </div>
           <div class="contents__code">
-            <div class="contents__code__header">
-              <div class="contents__code__language">
-                <span class="language-css">CSS</span>
-              </div>
-              <button class="contents__code__copy" type="button">コピー</button>
-            </div>
-            <div class="contents__code__block language-css">
-              <pre><code>/* デスクトップ向け */
+            <div class="code">
+              <header class="code__header">
+                <div class="code__language">
+                  <ul class="code__language-list">
+                    <li class="code__language-item language-css">CSS</li>
+                  </ul>
+                </div>
+                <button class="code__copy" type="button">コピー</button>
+              </header>
+              <div class="code__body">
+                <pre><code class="language-css">/* デスクトップ向け */
 @media (width >= 768px) {
   /* 画面幅が768px以上のスタイル */
 }
@@ -149,6 +152,7 @@
 @media (width < 768px) {
   /* 画面幅が768px未満のスタイル */
 }</code></pre>
+              </div>
             </div>
           </div>
           <div class="contents__text">
@@ -179,30 +183,28 @@
 
     <nav class="article__post-nav" aria-label="記事ナビゲーション">
       <div class="post-nav">
-        <ul class="post-nav__list">
-          <li class="post-nav__item">
-            <div class="prev">
-              <a href="/rat-days/news/261025.html">
+        <ul class="post-nav-list">
+          <li class="post-nav-item">
+            <a href="/rat-days/news/261025.html">
+              <div class="post-nav__block prev">
                 <p class="post-nav__lead">前の記事</p>
                 <p class="post-nav__title">「rat days」を<wbr />開設しました</p>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
-          <li class="post-nav__item">
-            <div class="next hidden">
-              <a href="/rat-days/news/26mmdd.html">
+          <li class="post-nav-item">
+            <a href="/rat-days/news/26mmdd.html">
+              <div class="post-nav__block next hidden">
                 <p class="post-nav__lead">次の記事</p>
                 <p class="post-nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
-      <div class="post-nav__button">
-        <a href="/rat-days/news/">
-          <p>記事一覧に戻る</p>
-        </a>
-      </div>
+      <a href="/rat-days/news/">
+        <p class="post-nav__button">記事一覧に戻る</p>
+      </a>
     </nav>
   </article>
 </main>
