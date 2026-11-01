@@ -21,44 +21,40 @@
 <div id="header"></div>
 
 <nav class="breadcrumb" aria-label="パンくずリスト">
-  <ol class="breadcrumb__list">
-    <li class="breadcrumb__item"><a href="/rat-days/">ホーム</a></li>
-    <li class="breadcrumb__item"><a href="/rat-days/news/">お知らせ</a></li>
-    <li class="breadcrumb__item" aria-current="page">=====title=====</li>
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item"><a href="/rat-days/">ホーム</a></li>
+    <li class="breadcrumb-item"><a href="/rat-days/news/">お知らせ</a></li>
+    <li class="breadcrumb-item" aria-current="page">=====title=====</li>
   </ol>
 </nav>
 
 <main>
   <article class="article">
-    <div class="article__head">
+    <header class="article__header">
       <div class="category">
-        <ul class="category__list">
-          <li class="category__item c-blue">=====category=====</li>
-          <li class="category__item c-pink">=====category=====</li>
-          <li class="category__item c-green">=====category=====</li>
+        <ul class="category-list">
+          <li class="category-item info">=====category=====</li>
+          <li class="category-item care">=====category=====</li>
+          <li class="category-item devlog">=====category=====</li>
         </ul>
       </div>
-      <div class="title">
-        <h1>=====title=====<wbr /></h1>
-      </div>
-      <div class="subtitle">
-        <p>=====subtitle=====<wbr /></p>
-      </div>
+      <h1 class="title">=====title=====<wbr /></h1>
+      <p class="subtitle">=====subtitle=====<wbr /></p>
       <div class="date">
-        <ul class="date__list">
-          <li class="date__item"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 公開</li>
-          <li class="date__item hidden"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 更新</li>
+        <ul class="date-list">
+          <li class="date-item"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 公開</li>
+          <li class="date-item hidden"><time datetime="2026-=====mm=====-=====dd=====">2026/=====mm=====/=====dd=====</time> 更新</li>
         </ul>
       </div>
-    </div>
+    </header>
 
     <nav class="article__index" aria-label="目次">
       <div class="index">
         <h2 class="index__h2-title">目次</h2>
-        <ol class="index__list">
-          <li class="index__item"><a href="#anchor01">テキストテキストテキスト</a></li>
-          <li class="index__item"><a href="#anchor02">テキストテキストテキスト</a></li>
-          <li class="index__item"><a href="#anchor03">テキストテキストテキスト</a></li>
+        <ol class="index-list">
+          <li class="index-item"><a href="#anchor01">テキストテキストテキスト</a></li>
+          <li class="index-item"><a href="#anchor02">テキストテキストテキスト</a></li>
+          <li class="index-item"><a href="#anchor03">テキストテキストテキスト</a></li>
         </ol>
       </div>
     </nav>
@@ -97,16 +93,20 @@
             <p>テキストテキストテキスト</p>
           </div>
           <div class="contents__code">
-            <div class="contents__code__header">
-              <div class="contents__code__language">
-                <span class="language-html">HTML</span>
-                <span class="language-css">CSS</span>
-                <span class="language-javascript">JavaScript</span>
+            <div class="code">
+              <header class="code__header">
+                <div class="code__language">
+                  <ul class="code__language-list">
+                    <li class="code__language-item language-html">HTML</li>
+                    <li class="code__language-item language-css">CSS</li>
+                    <li class="code__language-item language-javascript">JavaScript</li>
+                  </ul>
+                </div>
+                <button class="code__copy" type="button">コピー</button>
+              </header>
+              <div class="code__body">
+                <pre><code class="language-css">コードコードコードコードコードコードコードコードコード</code></pre>
               </div>
-              <button class="contents__code__copy" type="button">コピー</button>
-            </div>
-            <div class="contents__code__block language-css">
-              <pre><code>コードコードコードコードコードコードコードコードコード</code></pre>
             </div>
           </div>
           <div class="contents__img">
@@ -118,35 +118,45 @@
 
     <nav class="article__post-nav" aria-label="記事ナビゲーション">
       <div class="post-nav">
-        <ul class="post-nav__list">
-          <li class="post-nav__item">
-            <div class="prev">
-              <a href="/rat-days/news/26mmdd.html">
+        <ul class="post-nav-list">
+          <li class="post-nav-item">
+            <a href="/rat-days/news/26mmdd.html">
+              <div class="post-nav__block prev">
                 <p class="post-nav__lead">前の記事</p>
                 <p class="post-nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
-          <li class="post-nav__item">
-            <div class="next hidden">
-              <a href="/rat-days/news/26mmdd.html">
+          <li class="post-nav-item">
+            <a href="/rat-days/news/26mmdd.html">
+              <div class="post-nav__block next hidden">
                 <p class="post-nav__lead">次の記事</p>
                 <p class="post-nav__title">テキストテキスト<wbr />テキストテキスト<wbr />テキストテキスト</p>
-              </a>
-            </div>
+              </div>
+            </a>
           </li>
         </ul>
       </div>
-      <div class="post-nav__button">
-        <a href="/rat-days/news/">
-          <p>お知らせ一覧に戻る</p>
-        </a>
-      </div>
+      <a href="/rat-days/news/">
+        <p class="post-nav__button">記事一覧に戻る</p>
+      </a>
     </nav>
   </article>
 </main>
 
 <div id="footer"></div>
+
+<!-- PNGで保存用のJava Script START -->
+<!-- 出力したい要素にid="target"をつける -->
+<button id="download">PNGで保存</button>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas-next/1.8.0/html2canvas.min.js"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script src="/rat-days/common/js/export-png.js"></script>
+<!-- PNGで保存用のJava Script END -->
 
 <script src="/rat-days/common/js/script.js"></script>
 </body>
