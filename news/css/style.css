@@ -386,6 +386,7 @@ button {
   .article-card__block {
     gap: 50px;
     min-height: 180px;
+    padding-inline: 20px;
   }
 }
 @media (width < 768px) {
@@ -394,6 +395,9 @@ button {
     gap: min(var(--vw) * 20, 10px);
     padding-block: min(var(--vw) * 40, 20px);
   }
+}
+.article-card__block:hover {
+  background-color: var(--c-sub-background);
 }
 .article-card__text {
   display: flex;
