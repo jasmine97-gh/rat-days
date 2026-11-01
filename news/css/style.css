@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   font-size: 62.5%;
   -webkit-text-size-adjust: 100%;
@@ -7,6 +6,7 @@ html {
 
 :root {
   --font-base:
+    "Zen Maru Gothic",
     "Noto Sans JP",
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
@@ -25,7 +25,8 @@ html {
 }
 
 body {
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-width: 320px;
   background-color: var(--c-background);
@@ -34,9 +35,20 @@ body {
   font-size: 14px;
   line-height: 1.75;
   font-weight: 400;
+  overflow-y: scroll;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: unset;
   overflow-wrap: break-word;
+}
+@media (width >= 768px) {
+  body {
+    gap: 30px;
+  }
+}
+@media (width < 768px) {
+  body {
+    gap: min(var(--vw) * 30, 30px);
+  }
 }
 
 a, label, input[type=button], input[type=reset], input[type=submit], button {
@@ -181,7 +193,6 @@ button {
   align-items: center;
   justify-content: flex-start;
   background-color: var(--c-sub-background);
-  border-bottom: 1px solid var(--c-border);
 }
 @media (width >= 768px) {
   .header {
@@ -234,12 +245,12 @@ button {
 @media (width >= 768px) {
   .breadcrumb {
     max-width: 900px;
-    padding: 30px 50px 20px;
+    padding-inline: 50px;
   }
 }
 @media (width < 768px) {
   .breadcrumb {
-    padding: min(var(--vw) * 40, 30px) calc(var(--vw) * 40) min(var(--vw) * 20, 20px);
+    padding-inline: calc(var(--vw) * 40);
   }
 }
 .breadcrumb-list {
@@ -314,12 +325,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   background-color: var(--c-sub-background);
-  border-top: 1px solid var(--c-border);
 }
 @media (width >= 768px) {
   .footer {
-    padding: 20px 100px;
+    max-width: 900px;
+    padding: 20px 50px;
   }
 }
 @media (width < 768px) {
@@ -486,18 +498,15 @@ button {
 .article__header {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--c-border);
 }
 @media (width >= 768px) {
   .article__header {
     gap: 10px;
-    padding-bottom: 30px;
   }
 }
 @media (width < 768px) {
   .article__header {
     gap: min(var(--vw) * 20, 10px);
-    padding-bottom: min(var(--vw) * 40, 30px);
   }
 }
 .category-list {
@@ -568,52 +577,34 @@ button {
 }
 @media (width >= 768px) {
   .subtitle {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media (width < 768px) {
   .subtitle {
-    font-size: clamp(14px, var(--vw) * 32, 20px);
+    font-size: clamp(14px, var(--vw) * 30, 16px);
   }
 }
 
+@media (width >= 768px) {
+  .date {
+    font-size: 12px;
+  }
+}
+@media (width < 768px) {
+  .date {
+    font-size: clamp(11px, var(--vw) * 24, 12px);
+  }
+}
 .date-list {
   display: flex;
   justify-content: flex-end;
   gap: 1em;
 }
-@media (width >= 768px) {
-  .date-list {
-    font-size: 14px;
-  }
-}
-@media (width < 768px) {
-  .date-list {
-    font-size: clamp(12px, var(--vw) * 28, 14px);
-  }
-}
 .date-item.hidden {
   display: none;
 }
 
-@media (width >= 768px) {
-  .article__index {
-    padding-inline: 20px;
-  }
-}
-.index {
-  background-color: var(--c-sub-background);
-}
-@media (width >= 768px) {
-  .index {
-    padding: 10px 20px;
-  }
-}
-@media (width < 768px) {
-  .index {
-    padding: min(var(--vw) * 20, 10px) min(var(--vw) * 40, 20px);
-  }
-}
 .index__h2-title {
   font-weight: 700;
 }
@@ -645,7 +636,7 @@ button {
   }
 }
 .index-item::before {
-  content: "●";
+  content: "---";
   position: absolute;
   left: 0;
   color: var(--c-sub);
@@ -709,18 +700,18 @@ button {
 .contents__text {
   display: flex;
   flex-direction: column;
+  line-height: 1.9;
 }
 @media (width >= 768px) {
   .contents__text {
-    gap: 16px;
+    gap: 10px;
     font-size: 16px;
   }
 }
 @media (width < 768px) {
   .contents__text {
-    gap: min(var(--vw) * 20, 16px);
+    gap: min(var(--vw) * 20, 10px);
     font-size: clamp(14px, var(--vw) * 32, 16px);
-    line-height: 1.6;
   }
 }
 .code {
@@ -796,18 +787,15 @@ button {
 .article__post-nav {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--c-border);
 }
 @media (width >= 768px) {
   .article__post-nav {
     gap: 20px;
-    padding-top: 20px;
   }
 }
 @media (width < 768px) {
   .article__post-nav {
     gap: calc(var(--vw) * 20);
-    padding-top: calc(var(--vw) * 20);
   }
 }
 .post-nav-list {
@@ -823,15 +811,6 @@ button {
   .post-nav-list {
     gap: calc(var(--vw) * 40);
   }
-}
-.post-nav-list::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(50% - 0.5px);
-  width: 1px;
-  background-color: var(--c-border);
 }
 @media (width >= 768px) {
   .post-nav-item {
